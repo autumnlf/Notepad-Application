@@ -15,22 +15,23 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
 
-  <body>
+  <body onload="getAndRenderNotes();">
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">Note Taker </a>
+      <a class="navbar-brand" href="./index.html">Note Taker </a>
       <div class="icons">
-        <i class="fas fa-save text-light save-note"></i>
-        <i class="fas fa-plus text-light new-note"></i>
+        <i class="fas fa-save text-light save-note" id="saveNote"></i>
+        <i class="fas fa-plus text-light new-note" id="newNote"></i>
       </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container-fluid" id="card">
       <div class="row">
         <div class="col-4 list-container">
           <div class="card">
-            <ul class="list-group"></ul>
+            <ul class="list-group" id="noteList">
+            </ul>
           </div>
         </div>
         <div class="col-8">
@@ -39,11 +40,12 @@
             placeholder="Note Title"
             maxlength="28"
             type="text"
+            id="noteTitle"
           />
-          <textarea class="note-textarea" placeholder="Note Text"></textarea>
+          <textarea class="note-textarea" placeholder="Note Text" id="noteText"></textarea>
         </div>
       </div>
     </div>
-    <script src="/assets/js/index.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
